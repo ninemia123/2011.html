@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>ΦΡΟΥΡΑ ΕΙΔΙΚΟ · 2026</title>
+    <title>ΕΙΔΙΚΟ ΤΥΠΟΥ 2011 · 2026</title>
     <style>
         :root {
             --primary: #1b4d2b;
@@ -452,7 +452,7 @@
 </head>
 <body>
 <div class="container">
-    <h2>📱 ΦΡΟΥΡΑ ΕΙΔΙΚΟ ΥΠΟΛΟΓΙΣΜΟΣ</h2>
+    <h2>📱 ΕΙΔΙΚΟ ΤΥΠΟΥ 2011 ΥΠΟΛΟΓΙΣΜΟΣ</h2>
 
     <div class="tabs-container">
         <button class="tab-button active" onclick="openTab('calculator')" id="tabCalculator">🧮 Υπολογιστής</button>
@@ -477,14 +477,6 @@
             <h4 style="margin-top: 0; margin-bottom: 1rem; color: #4a2e7a;">➕ Επιπλέον Κρατήσεις</h4>
             
             <div class="extra-deduction-item">
-                <label for="tameioAllilov">Ταμείο Αλληλοβοήθειας (5,83€)</label>
-                <select id="tameioAllilov">
-                    <option value="no">Όχι</option>
-                    <option value="yes">Ναι</option>
-                </select>
-            </div>
-            
-            <div class="extra-deduction-item">
                 <label for="kladYgeias">Κλάδος Υγείας (1,5%)</label>
                 <select id="kladYgeias">
                     <option value="no">Όχι</option>
@@ -498,7 +490,7 @@
         </div>
 
         <div class="result-card" style="padding-bottom: 0.8rem;">
-            <h3 class="section-title" style="margin-top: 0;">📋 Βασικοί μισθοί (Κατ. Γ)</h3>
+            <h3 class="section-title" style="margin-top: 0;">📋 Βασικοί Μισθοί</h3>
             <div class="table-container">
                 <table>
                     <thead><tr><th>Κλιμ.</th><th>Έτη</th><th>Μισθός (€)</th></tr></thead>
@@ -607,9 +599,10 @@
                     <div class="penhmero-detail" id="penhmeroDetails">
                         Μεικτό: 46,00 €<br>
                         Εισφ Αλλ 2%: 0,92 €<br>
-                        Υπόλοιπο: 45,08 €<br>
-                        Φόρος 20%: 9,02 €<br>
-                        <strong>Καθαρό: 36,06 €</strong>
+                        ΜΤΠΥ 2%: 0,92 €<br>
+                        Υπόλοιπο: 44,16 €<br>
+                        Φόρος 20%: 8,83 €<br>
+                        <strong>Καθαρό: 35,33 €</strong>
                     </div>
                 </div>
             </div>
@@ -681,8 +674,7 @@
             <h4>🔹 Προ 1993</h4>
             <p>Η επιλογή "Προ 1993" εφαρμόζει μειωμένες κρατήσεις στα επιδόματα (συμπεριλαμβανομένου και του νέου Παραμεθορίου): μόνο Υγειονομική (2,05%), Ανεργία (2%) και ΜΤΠΥ (1%). Ο βασικός μισθός κρατάει τις κανονικές κρατήσεις.</p>
             <h4>🔹 Νέες επιλογές κρατήσεων</h4>
-            <p><strong>Ταμείο Αλληλοβοήθειας:</strong> σταθερή κράτηση 5,83€ από τα μηνιαία μεικτά.<br>
-            <strong>Κλάδος Υγείας 1,5%:</strong> επιπλέον ποσοστιαία κράτηση στο σύνολο των μεικτών.</p>
+            <p><strong>Κλάδος Υγείας 1,5%:</strong> επιπλέον ποσοστιαία κράτηση στο σύνολο των μεικτών.</p>
             <h4>🔹 Νυχτερινά / Πενθήμερα</h4>
             <p><strong>Νυχτερινά:</strong> Ο χρήστης εισάγει αριθμό νυχτών (π.χ. 2). Αυτό πολλαπλασιάζεται με 8 ώρες και στη συνέχεια με 3,3€/ώρα. Από το μεικτό ποσό αφαιρείται 2% Εισφορά Αλληλεγγύης και 2% ΜΤΠΥ, και από το υπόλοιπο υπολογίζεται φόρος 20% για να προκύψει το καθαρό.<br>
             <strong>Πενθήμερα:</strong> Από το μεικτό ποσό (π.χ. 46€) αφαιρείται 2% Εισφορά Αλληλεγγύης και από το υπόλοιπο υπολογίζεται φόρος 20% για το καθαρό.</p>
@@ -704,27 +696,16 @@
     }
 
     const salaryScale = [
-        { scale: 1,  years: "0-1",   amount: 998  },
-        { scale: 2,  years: "1-3",   amount: 1058 },
-        { scale: 3,  years: "3-5",   amount: 1118 },
-        { scale: 4,  years: "5-7",   amount: 1178 },
-        { scale: 5,  years: "7-9",   amount: 1238 },
-        { scale: 6,  years: "9-11",  amount: 1298 },
-        { scale: 7,  years: "11-13", amount: 1358 },
-        { scale: 8,  years: "13-15", amount: 1418 },
-        { scale: 9,  years: "15-17", amount: 1478 },
-        { scale: 10, years: "17-19", amount: 1538 },
-        { scale: 11, years: "19-21", amount: 1598 },
-        { scale: 12, years: "21-23", amount: 1658 },
-        { scale: 13, years: "23-25", amount: 1718 },
-        { scale: 14, years: "25-27", amount: 1778 },
-        { scale: 15, years: "27-29", amount: 1838 },
-        { scale: 16, years: "29-31", amount: 1898 },
-        { scale: 17, years: "31-33", amount: 1958 },
-        { scale: 18, years: "33-35", amount: 2018 },
-        { scale: 19, years: "35-37", amount: 2078 },
-        { scale: 20, years: "37-39", amount: 2138 },
-        { scale: 21, years: "39-40", amount: 2198 }
+        { scale: 1, years: "έως 2", amount: 998 }, { scale: 2, years: "2-4", amount: 1058 },
+        { scale: 3, years: "4-6", amount: 1118 }, { scale: 4, years: "6-8", amount: 1178 },
+        { scale: 5, years: "8-10", amount: 1238 }, { scale: 6, years: "10-12", amount: 1298 },
+        { scale: 7, years: "12-14", amount: 1358 }, { scale: 8, years: "14-16", amount: 1418 },
+        { scale: 9, years: "16-18", amount: 1478 }, { scale: 10, years: "18-20", amount: 1538 },
+        { scale: 11, years: "20-22", amount: 1598 }, { scale: 12, years: "22-24", amount: 1658 },
+        { scale: 13, years: "24-26", amount: 1718 }, { scale: 14, years: "26-28", amount: 1778 },
+        { scale: 15, years: "28-30", amount: 1838 }, { scale: 16, years: "30-32", amount: 1898 },
+        { scale: 17, years: "32-34", amount: 1958 }, { scale: 18, years: "34-36", amount: 2018 },
+        { scale: 19, years: "36-38", amount: 2078 }, { scale: 20, years: "38+", amount: 2138 }
     ];
 
     function populateTables() {
@@ -771,9 +752,10 @@
         const penhmeroValue = parseFloat(document.getElementById('penhmeroValue')?.value) || 0;
         const penhmeroGross = penhmeroCount * penhmeroValue;
         
-        // Κρατήσεις πενθημέρων: 2% Εισφ Αλλ, μετά φόρος 20% στο υπόλοιπο
+        // Κρατήσεις πενθημέρων: 2% Εισφ Αλλ, 2% ΜΤΠΥ, μετά φόρος 20% στο υπόλοιπο
         const eisforiaAllPenh = penhmeroGross * 0.02;
-        const afterDeductionsPenh = penhmeroGross - eisforiaAllPenh;
+        const mtpyPenh = penhmeroGross * 0.02;
+        const afterDeductionsPenh = penhmeroGross - eisforiaAllPenh - mtpyPenh;
         const taxPenh = afterDeductionsPenh * 0.20;
         const penhmeroNet = afterDeductionsPenh - taxPenh;
 
@@ -792,6 +774,7 @@
         document.getElementById('penhmeroDetails').innerHTML = 
             `Μεικτό: ${formatMoney(penhmeroGross)}<br>` +
             `Εισφ Αλλ 2%: ${formatMoney(eisforiaAllPenh)}<br>` +
+            `ΜΤΠΥ 2%: ${formatMoney(mtpyPenh)}<br>` +
             `Υπόλοιπο: ${formatMoney(afterDeductionsPenh)}<br>` +
             `Φόρος 20%: ${formatMoney(taxPenh)}<br>` +
             `<strong>Καθαρό: ${formatMoney(penhmeroNet)}</strong>`;
@@ -812,7 +795,6 @@
         const pouf = parseFloat(document.getElementById('input-pouf').value) || 0;
         const pre1993 = document.getElementById('pre1993Select').value === 'yes';
         
-        const tameioAllilov = document.getElementById('tameioAllilov').value === 'yes';
         const kladYgeias = document.getElementById('kladYgeias').value === 'yes';
 
         const totalBonuses = dang + ids + kidBonus + borderBonus;
@@ -829,7 +811,6 @@
         }
 
         let extraDeductions = 0;
-        if (tameioAllilov) extraDeductions += 5.83;
         if (kladYgeias) extraDeductions += totalGross * 0.015;
 
         const totalDeductions = basicDeductions + bonusDeductions + extraDeductions;
@@ -883,14 +864,9 @@
                 `;
             }
             
-            if (tameioAllilov || kladYgeias) {
+            if (kladYgeias) {
                 detailsHtml += `<tr><th colspan="2" style="background:#e1d7f0">Επιπλέον Κρατήσεις</th></tr>`;
-                if (tameioAllilov) {
-                    detailsHtml += `<tr><td>Ταμείο Αλληλοβοήθειας</td><td>${formatMoney(5.83)}</td></tr>`;
-                }
-                if (kladYgeias) {
-                    detailsHtml += `<tr><td>Κλάδος Υγείας (1,5%)</td><td>${formatMoney(totalGross*0.015)}</td></tr>`;
-                }
+                detailsHtml += `<tr><td>Κλάδος Υγείας (1,5%)</td><td>${formatMoney(totalGross*0.015)}</td></tr>`;
             }
 
             detailsHtml += `
@@ -917,7 +893,7 @@
     }
 
     function attachListeners() {
-        const ids = ['dangerousBonus','idsynBonus','childrenBonus','borderBonus','numChildrenSelect','ageGroup','input-pouf','scaleSelect','coefSelect','nightCount','penhmeroCount','penhmeroValue','pre1993Select','tameioAllilov','kladYgeias'];
+        const ids = ['dangerousBonus','idsynBonus','childrenBonus','borderBonus','numChildrenSelect','ageGroup','input-pouf','scaleSelect','coefSelect','nightCount','penhmeroCount','penhmeroValue','pre1993Select','kladYgeias'];
         ids.forEach(id => {
             const el = document.getElementById(id);
             if (!el) return;
